@@ -1187,7 +1187,7 @@ class CliTest extends BaseApplicationTestCase
         [$app, $tester] = $this->appAndTester();
 
         // The site this command should assume we're in if we don't pass in --site
-        $getcwd = 'valet';
+        $getcwd = basename(getcwd());
 
         $phpfpm = Mockery::mock(PhpFpm::class);
         $phpfpm->shouldReceive('isolateDirectory')->with($getcwd, '8.1');
@@ -1203,7 +1203,7 @@ class CliTest extends BaseApplicationTestCase
         [$app, $tester] = $this->appAndTester();
 
         // The site this command should assume we're in if we don't pass in --site
-        $getcwd = 'valet';
+        $getcwd = basename(getcwd());
 
         $phpfpm = Mockery::mock(PhpFpm::class);
         $phpfpm->shouldReceive('isolateDirectory')->with($getcwd, '8.2');
@@ -1226,7 +1226,7 @@ class CliTest extends BaseApplicationTestCase
         [$app, $tester] = $this->appAndTester();
 
         // The site this command should assume we're in if we don't pass in --site
-        $getcwd = 'valet';
+        $getcwd = basename(getcwd());
 
         $phpfpm = Mockery::mock(PhpFpm::class);
         $phpfpm->shouldReceive('unisolateDirectory')->with($getcwd)->once();
