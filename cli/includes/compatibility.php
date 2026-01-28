@@ -10,9 +10,9 @@ if (php_sapi_name() !== 'cli') {
  */
 $inTestingEnvironment = strpos($_SERVER['SCRIPT_NAME'], 'phpunit') !== false;
 
- $supportedOperatingSystems = ['Darwin', 'Linux'];
+$supportedOperatingSystems = ['Darwin', 'Linux'];
 
- if (! in_array(PHP_OS, $supportedOperatingSystems, true) && ! $inTestingEnvironment) {
+if (! in_array(PHP_OS, $supportedOperatingSystems, true) && ! $inTestingEnvironment) {
     echo 'This fork of Valet only supports macOS and Linux (detected: '.PHP_OS.').'.PHP_EOL;
 
     exit(1);
